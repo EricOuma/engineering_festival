@@ -1,0 +1,8 @@
+venv/
+*.sqlite3
+.vscode/
+__pycache__/
+credentials.json
+token.pickle
+*.pyc
+fixtures
