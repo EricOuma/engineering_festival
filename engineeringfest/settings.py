@@ -31,9 +31,9 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'cg#p$g+j9tax!#a3cup@1$8obt2_+&
 # DEBUG = os.environ.get('DJANGO_DEBUG', False)
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'engineeringfest.herokuapp.com', '43bcf6d5.ngrok.io']
+ALLOWED_HOSTS = ['127.0.0.1', 'engineeringfest.herokuapp.com']
 
-ADMINS = [('KUCU IT TEAM', 'kucuteam@gmail.com'), ('Eric', 'odhiamboeric0049@gmail.com')]
+ADMINS = [('Fidel', 'fidelmakatia85@gmail.com'), ('Eric', 'odhiamboeric0049@gmail.com')]
 
 
 # Application definition
@@ -98,7 +98,7 @@ DATABASES = {
 
 import dj_database_url
 
-DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
+# DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
 
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
