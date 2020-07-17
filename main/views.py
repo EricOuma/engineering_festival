@@ -6,8 +6,6 @@ from django.shortcuts import get_object_or_404
 
 from main.models import Program, SummitDay, Speaker, Sponsor
 
-from main.sls_calendar import calendar_setup
-
 # Create your views here.
 
 class HomeView(TemplateView):
@@ -30,34 +28,13 @@ class SpeakerListView(ListView):
     model = Speaker
 
 
-class PrivacyView(TemplateView):
-    template_name = "privacy.html"
-
 def prefix_254(number):
     phone = '254'+number.lstrip('0')
     return phone
-
-def register(request):
-    return render(request, 'register.html')
-
-
 
 def contact(request):
     form = ContactForm()
     return render(request, 'contact.html', {'form': form})
 
-
-
-# def add_to_calendar(request, event_id):
-#     service = calendar_setup()
-#     calendarId='882q1makp7mtkq9lvirmqd36ac@group.calendar.google.com'
-#     this_event = service.events().get(calendarId = calendarId, eventId=event_id).execute()
-#     event = service.events().insert(calendarId='primary', body=this_event).execute()
-#     if event:
-#         messages.success(request, 'Programme added to your calendar.')
-#         return redirect('index')
-#     else:
-#         messages.info(request, 'There was an error adding the event.')
-#         return redirect('index')
 
 

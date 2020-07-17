@@ -27,7 +27,7 @@ class SummitDayAdmin(admin.ModelAdmin):
 
 @admin.register(Program)
 class ProgramAdmin(admin.ModelAdmin):
-    list_display = ('name', 'speaker', 'start_time', 'end_time', 'venue')
+    list_display = ('name', 'speaker', 'start_time', 'end_time', 'meeting_link')
 
 
 
