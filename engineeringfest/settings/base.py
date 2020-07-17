@@ -15,11 +15,6 @@ IGNORABLE_404_URLS = [
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
-
-# SECURITY WARNING: keep the secret key used in production secret!
-# SECRET_KEY = 'rljw2t4gv7u6+_8tn@$fn46^4)yk!eh60(f2j^gz=cw%=-(0nz'
 SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'cg#p$g+j9tax!#a3cup@1$8obt2_+&k3q+pmu)5%asj6yjpkag')
 
 ALLOWED_HOSTS = ['127.0.0.1', 'engineeringfest.herokuapp.com']
