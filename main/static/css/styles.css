@@ -86,10 +86,6 @@ p {
 }
 
 
-img {
-  max-width: 100%;
-  height: auto; }
-
 ul {
   margin: 0;
   padding: 0; }
@@ -2564,7 +2560,7 @@ input:required {
     flex: 0 0 25%;
     max-width: 25%;
     width: 25%;
-    height: 240px;
+    height: 150px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;

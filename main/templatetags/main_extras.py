@@ -12,4 +12,4 @@ def crop_cloudinary_image(value):
 @register.filter(name='face_thumbnail')
 def face_thumbnail(value):
     """crops the image to a square while focusing on the face"""
-    return value.build_url(width=200, height=200, gravity="face", radius="max", crop="thumb")
+    return value.build_url(width=150, height=150, gravity="face", radius="max", crop="thumb")

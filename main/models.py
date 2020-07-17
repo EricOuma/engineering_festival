@@ -36,19 +36,19 @@ class SummitDay(models.Model):
 
 class Program(models.Model):
     """The Daily sls programs"""
-    day = models.ForeignKey('FestivalDay', on_delete=models.CASCADE, blank=True, null=True)
+    day = models.ForeignKey('SummitDay', on_delete=models.CASCADE, blank=True, null=True)
     name = models.CharField(max_length=40)
     start_time = models.DateTimeField()
     end_time = models.DateTimeField()
     # write a custom validator so that the end time comes after the start time
     description = models.TextField()
     speaker = models.ForeignKey('Speaker', models.SET_NULL, blank=True, null=True)
-    meeting_link = models.URLField(max_length=200, blank=True, null=True)
+    meeting_link = models.URLField(max_length=200)
 
     def __str__(self):
         return self.name
 
 
 class Sponsor(models.Model):
-    name = models.CharField(max_length=40)
+    name = models.CharField(max_length=100)
     logo = CloudinaryField('image')
