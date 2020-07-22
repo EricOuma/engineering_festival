@@ -6,6 +6,13 @@ from cloudinary.models import CloudinaryField
 
 
 class Speaker(models.Model):
+    major = 'MJ'
+    minor = 'MN'
+    CATEGORY = [
+        ('major', 'Major'),
+        ('minor', 'Minor'),
+    ]
+    category = models.CharField(max_length=5, choices=CATEGORY, blank=True, null=True, default=minor)
     title = models.CharField(max_length=35, help_text="eg <em>Mr, Dr, Prof...</em>.", blank=True, null=True)
     full_name = models.CharField(max_length=35)
     role = models.CharField(max_length=120, help_text="eg <em>CEO Google</em>.", blank=True, null=True)
@@ -36,13 +43,21 @@ class SummitDay(models.Model):
 
 class Program(models.Model):
     """The Daily sls programs"""
+    major = 'MJ'
+    minor = 'MN'
+    CATEGORY = [
+        ('major', 'Major'),
+        ('minor', 'Minor'),
+    ]
+    category = models.CharField(max_length=5, choices=CATEGORY, blank=True, null=True, default=minor)
     day = models.ForeignKey('SummitDay', on_delete=models.CASCADE, blank=True, null=True)
-    name = models.CharField(max_length=40)
+    name = models.CharField(max_length=70)
     start_time = models.DateTimeField()
     end_time = models.DateTimeField()
     # write a custom validator so that the end time comes after the start time
     description = models.TextField()
     speaker = models.ForeignKey('Speaker', models.SET_NULL, blank=True, null=True)
+    venue = models.CharField(max_length=30, default="Online")
     meeting_link = models.URLField(max_length=200)
 
     def __str__(self):
@@ -52,3 +67,7 @@ class Program(models.Model):
 class Sponsor(models.Model):
     name = models.CharField(max_length=100)
     logo = CloudinaryField('image')
+    website = models.URLField(max_length=200)
+
+    def __str__(self):
+        return self.name
