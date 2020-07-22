@@ -7,7 +7,7 @@
     <div class="welcome-slides owl-carousel">
         <!-- Single Slide -->
         <div class="single-welcome-slide bg-img bg-overlay jarallax"
-            style="background-image: url({% static 'img/bg-img/1.jpg' %});">
+            style="background-image: url({% static 'img/bg-img/4.jpg' %});">
             <div class="container h-100">
                 <div class="row h-100 align-items-center">
                     {% if messages %}
@@ -26,7 +26,7 @@
                             <h2 data-animation="fadeInUp" data-delay="500ms">ENGINEERING FESTIVAL 2020</h2>
                             <!-- Event Meta -->
                             <div class="event-meta" data-animation="fadeInUp" data-delay="500ms">
-                                <p class="event-date text-white" href="#"><i class="zmdi zmdi-account text-white"></i> August 7TH - 8TH,
+                                <p class="event-date text-white" href="#">August 7TH - 8TH,
                                     2020</p>
                             </div>
                             <div class="hero-btn-group" data-animation="fadeInUp" data-delay="700ms">
@@ -250,21 +250,21 @@
                         {% for day in summit_day_list %}
                         <!-- Nav Item -->
                         <li class="nav-item">
-                            <a class="nav-link active" id="{% cycle 'monday-tab' 'tuesday-tab' 'wednesday-tab' %}"
-                                data-toggle="tab" href="{% cycle '#step-one' '#step-two' '#step-three' %}" role="tab"
-                                aria-controls="{% cycle 'step-one' 'step-two' 'step-three' %}"
+                            <a class="nav-link active" id="{% cycle 'friday-tab' 'saturday-tab' %}"
+                                data-toggle="tab" href="{% cycle '#step-one' '#step-two' %}" role="tab"
+                                aria-controls="{% cycle 'step-one' 'step-two' %}"
                                 aria-expanded="true">{{  day.date|date:"l" }} <br>
                                 <span>{{ day.date|date:"d F Y" }}</span></a>
                         </li>
                         {% endfor %}
                         {% endcomment %}
                         <li class="nav-item">
-                            <a class="nav-link active" id="monday-tab" data-toggle="tab" href="#step-one" role="tab"
+                            <a class="nav-link active" id="friday-tab" data-toggle="tab" href="#step-one" role="tab"
                                 aria-controls="step-one" aria-expanded="true">Friday <br> <span>7TH AUGUST
                                     2020</span></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" id="tuesday-tab" data-toggle="tab" href="#step-two" role="tab"
+                            <a class="nav-link" id="saturday-tab" data-toggle="tab" href="#step-two" role="tab"
                                 aria-controls="step-two" aria-expanded="true">Saturday <br> <span>8TH AUGUST
                                     2020</span></a>
                         </li>
@@ -306,7 +306,6 @@
                                             <span class="title">{{ event.name }}</span>
                                             <span class="description">{{ event.description }}</span>
                                             <span class="location">{{ event.venue }}</span>
-                                            <span class="organizer">IEEE Kenyatta University Student Branch</span>
                                         </div>
                                     </div>
                                     {% endfor %}
@@ -350,7 +349,6 @@
                                             <span class="title">{{ event.name }}</span>
                                             <span class="description">{{ event.description }}</span>
                                             <span class="location">{{ event.venue }}</span>
-                                            <span class="organizer">IEEE Kenyatta University Student Branch</span>
                                         </div>
                                     </div>
                                     {% endfor %}
@@ -364,7 +362,8 @@
                 <!-- More Schedule Btn -->
                 <div class="col-12">
                     <div class="more-schedule-btn text-center mt-50 wow fadeInUp" data-wow-delay="300ms">
-                        <a href="#" class="btn confer-gb-btn">Dowload schedule (Pdf)</a>
+                        <a href="#" class="btn confer-gb-btn mr-2">View Full Program</a>
+                        <a href="#" class="btn confer-gb-btn">Download schedule (Pdf)</a>
                     </div>
                 </div>
             </div>
@@ -425,7 +424,7 @@
             <div class="col-12">
                 <div class="section-heading-2 text-center wow fadeInUp" data-wow-delay="300ms">
                     <p>Partners &amp; Sponsors</p>
-                    <h4>OFFICIAL SPONSORS</h4>
+                    <h4 style="color: #151853!important;">OFFICIAL SPONSORS</h4>
                 </div>
             </div>
         </div>
@@ -436,7 +435,7 @@
                     {% for sponsor in sponsor_list %}
                     <!-- Single Sponsor -->
                     <div class="single-sponsor wow fadeInUp" data-wow-delay="300ms">
-                        <a href="{{ sponsor.logo.url }}"><img src="{{ sponsor.logo.url }}" height="60!important" alt="{{ sponsor.name }}" data-toggle="tooltip" data-placement="top"
+                        <a href="{{ sponsor.logo.url }}"><img src="{{ sponsor.logo.url }}" height="80!important" alt="{{ sponsor.name }}" data-toggle="tooltip" data-placement="top"
                                 title="{{ sponsor.name }}"></a>
                     </div>
                     {% endfor %}
