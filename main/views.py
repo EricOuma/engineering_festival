@@ -16,7 +16,7 @@ class HomeView(TemplateView):
         context = super().get_context_data(**kwargs)
         # Add in a QuerySet of all the books
         context['summit_day_list'] = SummitDay.objects.values('date').order_by('date').all()
-        context['day_one_event_list'] = Program.objects.filter(day=1, category='major').order_by('start_time').all()[:6]
+        context['day_one_event_list'] = Program.objects.filter(day=1, category='major').order_by('-start_time').all()[:6]
         context['day_two_event_list'] = Program.objects.filter(day=2, category='major').order_by('start_time').all()[:6]
         context['speaker_list'] = Speaker.objects.filter(category='major').all()[:5]
         context['sponsor_list'] = Sponsor.objects.all()
@@ -24,12 +24,19 @@ class HomeView(TemplateView):
 
 
 class SpeakerListView(ListView):
-    model = Speaker
+    queryset = Speaker.objects.order_by('category')
 
 
 def prefix_254(number):
     phone = '254'+number.lstrip('0')
     return phone
+
+def programs(request):
+    context = {}
+    context['summit_day_list'] = SummitDay.objects.values('date').order_by('date').all()
+    context['day_one_event_list'] = Program.objects.filter(day=1).order_by('-start_time').all()
+    context['day_two_event_list'] = Program.objects.filter(day=2).order_by('-start_time').all()
+    return render(request, 'programs.html', context)
 
 def contact(request):
     form = ContactForm()

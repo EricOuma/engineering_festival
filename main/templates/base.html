@@ -63,6 +63,7 @@
                                 <li {% if request.path == '/' %}class="active"{% endif %}><a href="{% url 'index' %}">Home</a></li>
                                 <li {% if request.path == '/about' %}class="active"{% endif %}><a href="{% url 'index' %}#about">About</a></li>
                                 <li {% if request.path == '/speakers' %}class="active"{% endif %}><a href="{% url 'speakers' %}">Speakers</a></li>
+                                <li {% if request.path == '/programs' %}class="active"{% endif %}><a href="{% url 'programs' %}">Programs</a></li>
                                 <li {% if request.path == '/contact' %}class="active"{% endif %}><a href="{% url 'contact' %}">Contact Us</a></li>
                             </ul>
 

@@ -246,18 +246,6 @@
                 <div class="schedule-tab">
                     <!-- Nav Tabs -->
                     <ul class="nav nav-tabs wow fadeInUp" data-wow-delay="300ms" id="conferScheduleTab" role="tablist">
-                        {% comment %}
-                        {% for day in summit_day_list %}
-                        <!-- Nav Item -->
-                        <li class="nav-item">
-                            <a class="nav-link active" id="{% cycle 'friday-tab' 'saturday-tab' %}"
-                                data-toggle="tab" href="{% cycle '#step-one' '#step-two' %}" role="tab"
-                                aria-controls="{% cycle 'step-one' 'step-two' %}"
-                                aria-expanded="true">{{  day.date|date:"l" }} <br>
-                                <span>{{ day.date|date:"d F Y" }}</span></a>
-                        </li>
-                        {% endfor %}
-                        {% endcomment %}
                         <li class="nav-item">
                             <a class="nav-link active" id="friday-tab" data-toggle="tab" href="#step-one" role="tab"
                                 aria-controls="step-one" aria-expanded="true">Friday <br> <span>7TH AUGUST
@@ -273,7 +261,7 @@
 
                 <!-- Tab Content -->
                 <div class="tab-content" id="conferScheduleTabContent">
-                    <div class="tab-pane fade show active" id="step-one" role="tabpanel" aria-labelledby="monday-tab">
+                    <div class="tab-pane fade show active" id="step-one" role="tabpanel" aria-labelledby="friday-tab">
                         <!-- Single Tab Content -->
                         <div class="single-tab-content">
                             <div class="row">
@@ -315,7 +303,7 @@
                         </div>
                     </div>
 
-                    <div class="tab-pane fade" id="step-two" role="tabpanel" aria-labelledby="tuesday-tab">
+                    <div class="tab-pane fade" id="step-two" role="tabpanel" aria-labelledby="saturday-tab">
                         <!-- Single Tab Content -->
                         <div class="single-tab-content">
                             <div class="row">
@@ -362,7 +350,7 @@
                 <!-- More Schedule Btn -->
                 <div class="col-12">
                     <div class="more-schedule-btn text-center mt-50 wow fadeInUp" data-wow-delay="300ms">
-                        <a href="#" class="btn confer-gb-btn mr-2">View Full Program</a>
+                        <a href="{% url 'programs' %}" class="btn confer-gb-btn mr-2">View Full Program</a>
                         <a href="#" class="btn confer-gb-btn">Download schedule (Pdf)</a>
                     </div>
                 </div>
