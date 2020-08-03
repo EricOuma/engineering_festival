@@ -7,7 +7,7 @@
     <div class="welcome-slides owl-carousel">
         <!-- Single Slide -->
         <div class="single-welcome-slide bg-img bg-overlay jarallax"
-            style="background-image: url({% static 'img/bg-img/4.jpg' %});">
+            style="background-image: url({% static 'img/bg-img/1.jpg' %});">
             <div class="container h-100">
                 <div class="row h-100 align-items-center">
                     {% if messages %}
@@ -220,6 +220,7 @@
             </div>
             {% endfor %}
             <div class="col-12 text-center">
+                <a href="{% static 'docs/speakers.pdf' %}" class="btn confer-btn mr-2">Download (PDF) <i class="zmdi zmdi-long-arrow-right"></i></a>
                 <a href="{% url 'speakers' %}" class="btn confer-btn">View More <i class="zmdi zmdi-long-arrow-right"></i></a>
             </div>
             
@@ -351,7 +352,7 @@
                 <div class="col-12">
                     <div class="more-schedule-btn text-center mt-50 wow fadeInUp" data-wow-delay="300ms">
                         <a href="{% url 'programs' %}" class="btn confer-gb-btn mr-2">View Full Program</a>
-                        <a href="#" class="btn confer-gb-btn">Download schedule (Pdf)</a>
+                        <a href="{% static 'docs/schedule.pdf' %}" class="btn confer-gb-btn">Download schedule (Pdf)</a>
                     </div>
                 </div>
             </div>
