@@ -14,11 +14,11 @@ class HomeView(TemplateView):
     def get_context_data(self, **kwargs):
         # Call the base implementation first to get a context
         context = super().get_context_data(**kwargs)
-        # Add in a QuerySet of all the books
+        # Add in a QuerySet of all the items
         context['summit_day_list'] = SummitDay.objects.values('date').order_by('date').all()
-        context['day_one_event_list'] = Program.objects.filter(day=1, category='major').order_by('-start_time').all()[:6]
+        context['day_one_event_list'] = Program.objects.filter(day=1, category='major').order_by('start_time').all()[:6]
         context['day_two_event_list'] = Program.objects.filter(day=2, category='major').order_by('start_time').all()[:6]
-        context['speaker_list'] = Speaker.objects.filter(category='major').all()[:5]
+        context['speaker_list'] = Speaker.objects.filter(category='major').all()[:9]
         context['sponsor_list'] = Sponsor.objects.all()
         return context
 
@@ -34,8 +34,8 @@ def prefix_254(number):
 def programs(request):
     context = {}
     context['summit_day_list'] = SummitDay.objects.values('date').order_by('date').all()
-    context['day_one_event_list'] = Program.objects.filter(day=1).order_by('-start_time').all()
-    context['day_two_event_list'] = Program.objects.filter(day=2).order_by('-start_time').all()
+    context['day_one_event_list'] = Program.objects.filter(day=1).order_by('start_time').all()
+    context['day_two_event_list'] = Program.objects.filter(day=2).order_by('start_time').all()
     return render(request, 'programs.html', context)
 
 def contact(request):
