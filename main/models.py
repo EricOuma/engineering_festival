@@ -7,10 +7,12 @@ from cloudinary.models import CloudinaryField
 
 class Speaker(models.Model):
     major = 'MJ'
+    middle = 'MD'
     minor = 'MN'
     CATEGORY = [
         ('major', 'Major'),
-        ('minor', 'Minor'),
+        ('middle', 'Middle'),
+        ('minor', 'Minor')
     ]
     category = models.CharField(max_length=5, choices=CATEGORY, blank=True, null=True, default=minor)
     title = models.CharField(max_length=35, help_text="eg <em>Mr, Dr, Prof...</em>.", blank=True, null=True)
