@@ -14,7 +14,7 @@ class Speaker(models.Model):
         ('middle', 'Middle'),
         ('minor', 'Minor')
     ]
-    category = models.CharField(max_length=5, choices=CATEGORY, blank=True, null=True, default=minor)
+    category = models.CharField(max_length=6, choices=CATEGORY, blank=True, null=True, default=minor)
     title = models.CharField(max_length=35, help_text="eg <em>Mr, Dr, Prof...</em>.", blank=True, null=True)
     full_name = models.CharField(max_length=35)
     role = models.CharField(max_length=120, help_text="eg <em>CEO Google</em>.", blank=True, null=True)
