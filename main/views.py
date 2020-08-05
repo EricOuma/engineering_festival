@@ -18,7 +18,7 @@ class HomeView(TemplateView):
         context['summit_day_list'] = SummitDay.objects.values('date').order_by('date').all()
         context['day_one_event_list'] = Program.objects.filter(day=1, category='major').order_by('start_time').all()[:6]
         context['day_two_event_list'] = Program.objects.filter(day=2, category='major').order_by('start_time').all()[:6]
-        context['speaker_list'] = Speaker.objects.filter(category='major').all()[:9]
+        context['speaker_list'] = Speaker.objects.filter(category='major').all()[:12]
         context['sponsor_list'] = Sponsor.objects.all()
         return context
 
