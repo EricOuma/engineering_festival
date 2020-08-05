@@ -66,7 +66,7 @@
                                     <div class="schedule-time-place">
                                         <p><i class="zmdi zmdi-time"></i> {{event.start_time.time }} to
                                             {{ event.end_time.time }}</p>
-                                        <p><i class="zmdi zmdi-map"></i> {{ event.venue }}</p>
+                                        <p><i class="zmdi zmdi-map"></i> <a href="{{ event.meeting_link }}">{{ event.venue }}</a></p>
                                     </div>
                                     <div title="Add to Calendar" class="addeventatc">
                                         Add to Calendar
@@ -76,7 +76,7 @@
                                         <span class="timezone">Africa/Nairobi</span>
                                         <span class="title">{{ event.name }}</span>
                                         <span class="description">{{ event.description }}</span>
-                                        <span class="location">{{ event.venue }}</span>
+                                        <span class="location">{{ event.meeting_link }}</span>
                                     </div>
                                 </div>
                                 {% endfor %}
@@ -119,7 +119,7 @@
                                         <span class="timezone">Africa/Nairobi</span>
                                         <span class="title">{{ event.name }}</span>
                                         <span class="description">{{ event.description }}</span>
-                                        <span class="location">{{ event.venue }}</span>
+                                        <span class="location">{{ event.meeting_link }}</span>
                                     </div>
                                 </div>
                                 {% endfor %}
