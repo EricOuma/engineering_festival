@@ -17,9 +17,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 SECRET_KEY = os.environ.get('SECRET_KEY', 'cg#p$g+j9tax!#a3cup@1$8obt2_+&k3q+pmu)5%asj6yjpkag')
 
-ALLOWED_HOSTS = ['127.0.0.1', 'engineeringfest.herokuapp.com']
+ALLOWED_HOSTS = ['127.0.0.1', 'engineeringfest.herokuapp.com', 'localhost']
 
-ADMINS = [('Eric', 'odhiamboeric0049@gmail.com'),]
+ADMINS = [('Eric', 'odhiamboeric0049@gmail.com'), ('Shadrack', 'shadrackkipkemoi3@gmail.com')]
 
 
 # Application definition
